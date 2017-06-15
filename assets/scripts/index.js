@@ -3,8 +3,11 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 
+// require('./../../includes/script.js')
 $(() => {
   setAPIOrigin(location, config)
+  require('./jquerymap.js')
+  require('./script.js')
 })
 
 // use require with a reference to bundle the file and use it in this file
