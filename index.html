@@ -12,14 +12,208 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <article class="page-content">
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+    <!-- SECTION DEMO -->
+    <section id="section-demo">
+      <hr />
+
+      <!-- MAP -->
+      <div id="display-map" class="display-demo-map">
+        <!-- CSSMap - Africa -->
+        <div id="map-africa">
+         <ul class="africa">
+          <li class="afr1"><a href="#algeria">Algeria</a></li>
+          <li class="afr2"><a href="#angola">Angola</a></li>
+          <li class="afr3"><a href="#benin">Benin</a></li>
+          <li class="afr4"><a href="#botswana">Botswana</a></li>
+          <li class="afr5"><a href="#burkina-faso">Burkina Faso</a></li>
+          <li class="afr6"><a href="#burundi">Burundi</a></li>
+          <li class="afr7"><a href="#cameroon">Cameroon</a></li>
+          <li class="afr8"><a href="#cape-verde" class="tooltip-middle">Cape Verde <small>(Portugal)</small></a></li>
+          <li class="afr9"><a href="#canary-islands" class="tooltip-middle">Canary Islands <small>(Spain)</small></a></li>
+          <li class="afr10"><a href="#central-african-republic">Central African Republic</a></li>
+          <li class="afr11"><a href="#chad">Chad</a></li>
+          <li class="afr12"><a href="#comoros" class="tooltip-middle">Comoros</a></li>
+          <li class="afr13"><a href="#congo">Congo</a></li>
+          <li class="afr14"><a href="#cote-d-ivoire">Côte d'Ivoire</a></li>
+          <li class="afr15"><a href="#democratic-republic-of-the-congo">Democratic Republic of the Congo</a></li>
+          <li class="afr16"><a href="#djibouti">Djibouti</a></li>
+          <li class="afr17"><a href="#egypt">Egypt</a></li>
+          <li class="afr18"><a href="#equatorial-guinea">Equatorial Guinea</a></li>
+          <li class="afr19"><a href="#eritrea">Eritrea</a></li>
+          <li class="afr20"><a href="#ethiopia">Ethiopia</a></li>
+          <li class="afr21"><a href="#gabon">Gabon</a></li>
+          <li class="afr22"><a href="#gambia">Gambia</a></li>
+          <li class="afr23"><a href="#ghana">Ghana</a></li>
+          <li class="afr24"><a href="#guinea">Guinea</a></li>
+          <li class="afr25"><a href="#guinea-bisaau">Guinea-Bisaau</a></li>
+          <li class="afr26"><a href="#kenya">Kenya</a></li>
+          <li class="afr27"><a href="#lesotho">Lesotho</a></li>
+          <li class="afr28"><a href="#liberia">Liberia</a></li>
+          <li class="afr29"><a href="#libya">Libya</a></li>
+          <li class="afr30"><a href="#madagascar">Madagascar</a></li>
+          <li class="afr31"><a href="#madeira" class="tooltip-middle">Madeira <small>(Portugal)</small></a></li>
+          <li class="afr32"><a href="#malawi">Malawi</a></li>
+          <li class="afr33"><a href="#mali">Mali</a></li>
+          <li class="afr34"><a href="#mauritania">Mauritania</a></li>
+          <li class="afr35"><a href="#mauritius">Mauritius</a></li>
+          <li class="afr36"><a href="#mayotte">Mayotte <small>(France)</small></a></li>
+          <li class="afr37"><a href="#morocco">Morocco</a></li>
+          <li class="afr38"><a href="#mozambique">Mozambique</a></li>
+          <li class="afr39"><a href="#namibia">Namibia</a></li>
+          <li class="afr40"><a href="#niger">Niger</a></li>
+          <li class="afr41"><a href="#nigeria">Nigeria</a></li>
+          <li class="afr42"><a href="#reunion">Réunion <small>(France)</small></a></li>
+          <li class="afr43"><a href="#rwanda">Rwanda</a></li>
+          <li class="afr44"><a href="#sahrawi-arab-democratic-republic">Sahrawi Arab Democratic Republic</a></li>
+          <li class="afr45"><a href="#sao-tome-and-principe" class="tooltip-middle">São Tomé and Príncipe</a></li>
+          <li class="afr46"><a href="#senegal">Senegal</a></li>
+          <li class="afr47"><a href="#seychelles" class="tooltip-middle">Seychelles</a></li>
+          <li class="afr48"><a href="#sierra-leone">Sierra Leone</a></li>
+          <li class="afr49"><a href="#somalia">Somalia</a></li>
+          <li class="afr50"><a href="#somaliland">Somaliland</a></li>
+          <li class="afr51"><a href="#south-africa">South Africa</a></li>
+          <li class="afr52"><a href="#south-sudan">South Sudan</a></li>
+          <li class="afr53"><a href="#sudan">Sudan</a></li>
+          <li class="afr54"><a href="#swaziland">Swaziland</a></li>
+          <li class="afr55"><a href="#togo">Togo</a></li>
+          <li class="afr56"><a href="#tunisia">Tunisia</a></li>
+          <li class="afr57"><a href="#uganda">Uganda</a></li>
+          <li class="afr58"><a href="#united-republic-of-tanzania">United Republic of Tanzania</a></li>
+          <li class="afr59"><a href="#zambia">Zambia</a></li>
+          <li class="afr60"><a href="#zimbabwe">Zimbabwe</a></li>
+         </ul>
+        </div>
+        <!-- END OF THE CSSMap - Africa -->
+        <div id="demo-form-fields" class="demo-form-fields">
+          <ul>
+            <li><label for="demo-select">Select dropdown</label><div class="select-field"><select id="demo-select" name="demo-select" class="hidden-field"><option value="0">-- Select location</option></select></div></li>
+            <li><label for="demo-input">Input field</label><input type="text" id="demo-input" name="demo-input" class="hidden-field" /></li>
+          </ul>
+        </div>
+        <div id="demo-agents" class="demo-agents-list wrapper">
+         <ul>
+          <li id="algeria"><h3>Algeria</h3><p>Some info about Algeria, or list of addresses, or anything else you want to display here.</p><p>Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut.</p>  </li>
+          <li id="angola"><h3>Angola</h3><p>Some info about Angola, or list of addresses, or anything else you want to display here.</p><p>Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut.</p>  </li>
+          <li id="benin"><h3>Benin</h3><p>Some info about Benin, or list of addresses, or anything else you want to display here.</p><p>Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper.</p>  </li>
+          <li id="botswana"><h3>Botswana</h3><p>Some info about Botswana, or list of addresses, or anything else you want to display here.</p><p>Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut.</p>  </li>
+          <li id="burkina-faso"><h3>Burkina Faso</h3><p>Some info about Burkina Faso, or list of addresses, or anything else you want to display here.</p><p>Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum.</p>  </li>
+          <li id="burundi"><h3>Burundi</h3><p>Some info about Burundi, or list of addresses, or anything else you want to display here.</p><p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor.</p>  </li>
+          <li id="cameroon"><h3>Cameroon</h3><p>Some info about Cameroon, or list of addresses, or anything else you want to display here.</p><p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor.</p>  </li>
+          <li id="cape-verde"><h3>Cape Verde (Portugal)</h3><p>Some info about Cape Verde (Portugal), or list of addresses, or anything else you want to display here.</p><p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor.</p>  </li>
+          <li id="canary-islands"><h3>Canary Islands (Spain)</h3><p>Some info about Canary Islands (Spain), or list of addresses, or anything else you want to display here.</p><p>Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat.</p>  </li>
+          <li id="central-african-republic"><h3>Central African Republic</h3><p>Some info about Central African Republic, or list of addresses, or anything else you want to display here.</p><p>Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut.</p>  </li>
+          <li id="chad"><h3>Chad</h3><p>Some info about Chad, or list of addresses, or anything else you want to display here.</p><p>In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam.</p>  </li>
+          <li id="comoros"><h3>Comoros</h3><p>Some info about Comoros, or list of addresses, or anything else you want to display here.</p><p>Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed.</p>  </li>
+          <li id="congo"><h3>Congo</h3><p>Some info about Congo, or list of addresses, or anything else you want to display here.</p><p>Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper.</p>  </li>
+          <li id="cote-d-ivoire"><h3>Côte d'Ivoire</h3><p>Some info about Côte d'Ivoire, or list of addresses, or anything else you want to display here.</p><p>Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut.</p>  </li>
+          <li id="democratic-republic-of-the-congo"><h3>Democratic Republic of the Congo</h3><p>Some info about Democratic Republic of the Congo, or list of addresses, or anything else you want to display here.</p><p>In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam.</p>  </li>
+          <li id="djibouti"><h3>Djibouti</h3><p>Some info about Djibouti, or list of addresses, or anything else you want to display here.</p><p>Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed.</p>  </li>
+          <li id="egypt"><h3>Egypt</h3><p>Some info about Egypt, or list of addresses, or anything else you want to display here.</p><p>Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum.</p>  </li>
+          <li id="equatorial-guinea"><h3>Equatorial Guinea</h3><p>Some info about Equatorial Guinea, or list of addresses, or anything else you want to display here.</p><p>Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat.</p>  </li>
+          <li id="eritrea"><h3>Eritrea</h3><p>Some info about Eritrea, or list of addresses, or anything else you want to display here.</p><p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor.</p>  </li>
+          <li id="ethiopia"><h3>Ethiopia</h3><p>Some info about Ethiopia, or list of addresses, or anything else you want to display here.</p><p>In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam.</p>  </li>
+          <li id="gabon"><h3>Gabon</h3><p>Some info about Gabon, or list of addresses, or anything else you want to display here.</p><p>Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed.</p>  </li>
+          <li id="gambia"><h3>Gambia</h3><p>Some info about Gambia, or list of addresses, or anything else you want to display here.</p><p>Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut.</p>  </li>
+          <li id="ghana"><h3>Ghana</h3><p>Some info about Ghana, or list of addresses, or anything else you want to display here.</p><p>In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam.</p>  </li>
+          <li id="guinea"><h3>Guinea</h3><p>Some info about Guinea, or list of addresses, or anything else you want to display here.</p><p>In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam.</p>  </li>
+          <li id="guinea-bisaau"><h3>Guinea-Bisaau</h3><p>Some info about Guinea-Bisaau, or list of addresses, or anything else you want to display here.</p><p>Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum.</p>  </li>
+          <li id="kenya"><h3>Kenya</h3><p>Some info about Kenya, or list of addresses, or anything else you want to display here.</p><p>Phasellus quis est sed turpis sollicitudin venenatis sed eu odio. Praesent eget neque eu eros interdum.</p>  </li>
+          <li id="lesotho"><h3>Lesotho</h3><p>Some info about Lesotho, or list of addresses, or anything else you want to display here.</p><p>Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed.</p>  </li>
+          <li id="liberia"><h3>Liberia</h3><p>Some info about Liberia, or list of addresses, or anything else you want to display here.</p><p>Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed.</p>  </li>
+          <li id="libya"><h3>Libya</h3><p>Some info about Libya, or list of addresses, or anything else you want to display here.</p><p>Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed.</p>  </li>
+          <li id="madagascar"><h3>Madagascar</h3><p>Some info about Madagascar, or list of addresses, or anything else you want to display here.</p><p>Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut.</p>  </li>
+          <li id="madeira"><h3>Madeira (Portugal)</h3><p>Some info about Madeira (Portugal), or list of addresses, or anything else you want to display here.</p><p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor.</p>  </li>
+          <li id="malawi"><h3>Malawi</h3><p>Some info about Malawi, or list of addresses, or anything else you want to display here.</p><p>Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper.</p>  </li>
+          <li id="mali"><h3>Mali</h3><p>Some info about Mali, or list of addresses, or anything else you want to display here.</p><p>Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper.</p>  </li>
+          <li id="mauritania"><h3>Mauritania</h3><p>Some info about Mauritania, or list of addresses, or anything else you want to display here.</p><p>In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam.</p>  </li>
+          <li id="mauritius"><h3>Mauritius</h3><p>Some info about Mauritius, or list of addresses, or anything else you want to display here.</p><p>Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat.</p>  </li>
+          <li id="mayotte"><h3>Mayotte (France)</h3><p>Some info about Mayotte (France), or list of addresses, or anything else you want to display here.</p><p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor.</p>  </li>
+          <li id="morocco"><h3>Morocco</h3><p>Some info about Morocco, or list of addresses, or anything else you want to display here.</p><p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor.</p>  </li>
+          <li id="mozambique"><h3>Mozambique</h3><p>Some info about Mozambique, or list of addresses, or anything else you want to display here.</p><p>In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam.</p>  </li>
+          <li id="namibia"><h3>Namibia</h3><p>Some info about Namibia, or list of addresses, or anything else you want to display here.</p><p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor.</p>  </li>
+          <li id="niger"><h3>Niger</h3><p>Some info about Niger, or list of addresses, or anything else you want to display here.</p><p>Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat.</p>  </li>
+          <li id="nigeria"><h3>Nigeria</h3><p>Some info about Nigeria, or list of addresses, or anything else you want to display here.</p><p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor.</p>  </li>
+          <li id="reunion"><h3>Réunion (France)</h3><p>Some info about Réunion (France), or list of addresses, or anything else you want to display here.</p><p>Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper.</p>  </li>
+          <li id="rwanda"><h3>Rwanda</h3><p>Some info about Rwanda, or list of addresses, or anything else you want to display here.</p><p>Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed.</p>  </li>
+          <li id="sahrawi-arab-democratic-republic"><h3>Sahrawi Arab Democratic Republic</h3><p>Some info about Sahrawi Arab Democratic Republic, or list of addresses, or anything else you want to display here.</p><p>In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam.</p>  </li>
+          <li id="sao-tome-and-principe"><h3>São Tomé and Príncipe</h3><p>Some info about São Tomé and Príncipe, or list of addresses, or anything else you want to display here.</p><p>Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed.</p>  </li>
+          <li id="senegal"><h3>Senegal</h3><p>Some info about Senegal, or list of addresses, or anything else you want to display here.</p><p>Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat.</p>  </li>
+          <li id="seychelles"><h3>Seychelles</h3><p>Some info about Seychelles, or list of addresses, or anything else you want to display here.</p><p>Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut.</p>  </li>
+          <li id="sierra-leone"><h3>Sierra Leone</h3><p>Some info about Sierra Leone, or list of addresses, or anything else you want to display here.</p><p>In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam.</p>  </li>
+          <li id="somalia"><h3>Somalia</h3><p>Some info about Somalia, or list of addresses, or anything else you want to display here.</p><p>Donec viverra auctor lobortis. Pellentesque eu est a nulla placerat dignissim. Morbi a enim in magna semper.</p>  </li>
+          <li id="somaliland"><h3>Somaliland</h3><p>Some info about Somaliland, or list of addresses, or anything else you want to display here.</p><p>In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam.</p>  </li>
+          <li id="south-africa"><h3>South Africa</h3><p>Some info about South Africa, or list of addresses, or anything else you want to display here.</p><p>Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat.</p>  </li>
+          <li id="south-sudan"><h3>South Sudan</h3><p>Some info about South Sudan, or list of addresses, or anything else you want to display here.</p><p>In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam.</p>  </li>
+          <li id="sudan"><h3>Sudan</h3><p>Some info about Sudan, or list of addresses, or anything else you want to display here.</p><p>Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut.</p>  </li>
+          <li id="swaziland"><h3>Swaziland</h3><p>Some info about Swaziland, or list of addresses, or anything else you want to display here.</p><p>Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat.</p>  </li>
+          <li id="togo"><h3>Togo</h3><p>Some info about Togo, or list of addresses, or anything else you want to display here.</p><p>Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat.</p>  </li>
+          <li id="tunisia"><h3>Tunisia</h3><p>Some info about Tunisia, or list of addresses, or anything else you want to display here.</p><p>Vivamus rutrum nunc non neque consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat.</p>  </li>
+          <li id="uganda"><h3>Uganda</h3><p>Some info about Uganda, or list of addresses, or anything else you want to display here.</p><p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor.</p>  </li>
+          <li id="united-republic-of-tanzania"><h3>United Republic of Tanzania</h3><p>Some info about United Republic of Tanzania, or list of addresses, or anything else you want to display here.</p><p>Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor.</p>  </li>
+          <li id="zambia"><h3>Zambia</h3><p>Some info about Zambia, or list of addresses, or anything else you want to display here.</p><p>Quisque lacus quam, egestas ac tincidunt a, lacinia vel velit. Aenean facilisis nulla vitae urna tincidunt congue sed.</p>  </li>
+          <li id="zimbabwe"><h3>Zimbabwe</h3><p>Some info about Zimbabwe, or list of addresses, or anything else you want to display here.</p><p>In hac habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit, sem diam.</p>  </li>
+         </ul>
+        </div>
+        <div id="demo-markers">
+         <ul class="cssmap-pins">
+          <li class="cssmap-pin" data-cssmap-coords="332,502">
+
+           <div class="cssmap-tooltip-content">
+            Vivamus rutrum consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat.
+           </div>
+           <a href="#" class="cssmap-marker"><img src="includes/pin.png" width="20" height="25" alt="pin"/></a>
+
+          </li>
+          <li class="cssmap-pin" data-cssmap-coords="920,1140">
+
+           <div class="cssmap-tooltip-content">
+            Vivamus rutrum consectetur quis placerat neque lobortis. Nam vestibulum, arcu sodales feugiat.
+           </div>
+           <a href="#" class="cssmap-marker"><img src="includes/pin.png" width="20" height="25" alt="pin"/></a>
+
+          </li>
+         </ul>
+        </div>
+      </div>
+      <!-- END OF THE MAP -->
+
+      <div class="wrapper">
+
+      <!-- MAP SETTINGS -->
+      <div id="map-settings" class="map-settings fixed-container">
+        <form id="map-settings-form" name="map-settings-form" action="#" method="post" novalidate>
+          <fieldset id="options-basic">
+           <legend class="h-icon icon-options-settings">CSSMap settings</legend>
+            <ul>
+              <li class="inline-label">
+                <label for="map-set-size">Size (map width)</label>
+                <div class="select-field">
+                 <select id="map-set-size" name="map-set-size">
+                  <option value="250">250 px</option>
+                  <option value="320">320 px</option>
+                  <option value="430">430 px</option>
+                  <option value="540">540 px</option>
+                  <option value="650">650 px</option>
+                  <option value="750">750 px</option>
+                  <option value="850">850 px</option>
+                  <option value="960">960 px</option>
+                  <option value="1280">1280 px</option>
+                  <option value="1450" selected>1450 px</option>
+                 </select>
+                </div>
+              </li>
+            </ul>
+          </fieldset>
+        </form>
+      </div>
+      <!-- END OF THE MAP SETTINGS -->
+     </div><!-- END .wrapper -->
+    </section>
+    <!-- END OF THE SECTION DEMO -->
+
+  </article>
+
     </body>
 </html>
