@@ -13,9 +13,6 @@ front-end frameworks included.
 1.  Empty [`README.md`](README.md) and fill with your own content.
 1.  Move into the new project and `git init`.
 1.  Install dependencies with `npm install`.
-  -   [Webpack](https://webpack.github.io)
-  -   [Bootstrap](http://getbootstrap.com)
-  -   [Handlebars.js](http://handlebarsjs.com)
 
 ## Structure
 
