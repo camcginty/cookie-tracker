@@ -4,7 +4,8 @@
       "assets/**/*.js",
       "grunt/**/*.js",
       "lib/**/*.js",
-      "spec/**/*.spec.js"
+      "spec/**/*.spec.js",
+      "spec/_all.js"
     ],
     "spec": [
       "spec/**/*.spec.js"
