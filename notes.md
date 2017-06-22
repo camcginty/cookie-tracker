@@ -2,13 +2,15 @@
 
 At the beginning of each cohort, update the versions in package.json by:
 
-1. `rm -r node_modules`
-1. `cp package.json package.json.bak`
-1. `sed -E 's/"\^.+"/"*"/' package.json.bak >package.json`
-1. `npm update --save`
-1. `npm update --save-dev`
-  -   note: make sure it works
-1. `rm package.json.bak`
+```sh
+rm -r node_modules
+cp package.json package.json.bak
+sed -E 's/"\^.+"/"*"/' package.json.bak >package.json
+npm update --save
+npm update --save-dev
+  # note: make sure it works
+rm package.json.bak
+```
 
 ## Structure
 
