@@ -11,15 +11,16 @@ front-end frameworks included.
 1.  [Download](../../archive/master.zip) this template.
 1.  Unzip and rename the template directory.
 1.  Empty [`README.md`](README.md) and fill with your own content.
-1.  Replace all instances of `ga-wdi-boston.browser-template` with the name of your project.
+1.  Replace all instances of `ga-wdi-boston.browser-template` with the name of
+    your project.
 1.  Move into the new project and `git init`.
 1.  Install dependencies with `npm install`.
 
 ## Structure
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
+Developers should store JavaScript files in [`app/scripts`](app/scripts).
 The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
+[`app/scripts/index.js`](app/scripts/index.js). In general, only
 application initialization goes in this file. It's normal for developers to
 start putting all code in this file, but encourage them to break out different
 responsibilities and use the `require` syntax put references where they're
@@ -30,8 +31,8 @@ Developers should set `config.apiOrigins.production` (and
 `apiOrigins` set, developers may rely on `config.apiOrigin` as the base for API
 URLs.
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss).
+Developers should store styles in [`app/styles`](app/styles) and load them
+from [`app/styles/index.scss`](app/styles/index.scss).
 
 Developers should use [getFormFields](forms.md) to retrieve form data to send to
 an API.
@@ -44,7 +45,8 @@ Developers should run these often!
 
 -   `grunt nag` or just `grunt`: runs code quality analysis tools on your code
     and complains
--   `grunt make-standard`: reformats all your code in the JavaScript Standard Style
+-   `grunt make-standard`: reformats all your code in the JavaScript Standard
+    Style
 -   `grunt <server|serve|s>`: generates bundles, watches, and livereloads
 -   `grunt test`: runs any automated tests, depends on `grunt build`
 -   `grunt build`: place bundled styles and scripts where `index.html` can find
