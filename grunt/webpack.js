@@ -30,24 +30,36 @@ module.exports = {
     ],
 
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.js$/,
           exclude: /(node_modules|bower_components)/,
-          loader: 'babel',
+          loader: 'babel-loader',
           query: {
             presets: ['es2015']
           }
         },
         {
-          test: /\.css/,
-          loader: 'style!css',
-          includePaths: [path.resolve(__dirname, './node_modules')]
+          test: /\.css$/,
+          use: [
+            { loader: 'style-loader' },
+            { loader: 'css-loader' }
+          ]
         },
         {
-          test: /\.scss/,
-          loader: 'style!css!sass',
-          includePaths: [path.resolve(__dirname, './node_modules')]
+          test: /\.scss$/,
+          use: [
+            { loader: 'style-loader' },
+            { loader: 'css-loader' },
+            {
+              loader: 'sass-loader',
+              options: {
+                includePaths: [
+                  path.resolve(__dirname, './node_modules')
+                ]
+              }
+            }
+          ]
         },
         {
           test: /\.woff[\d]?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
