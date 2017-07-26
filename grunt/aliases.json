@@ -1,5 +1,5 @@
 {
-  "default": ["nag"],
+  "default": ["nag", "test"],
   "deploy": [
     "shell:git-is-clean",
     "shell:git-checkout-master",
