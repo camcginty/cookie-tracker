@@ -29,5 +29,11 @@
       "spec/**/*.json",
       "grunt/*.json"
     ]
+  },
+
+  "sass": {
+    "all": [
+      "assets/styles/**/*.scss"
+    ]
   }
 }

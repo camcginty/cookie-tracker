@@ -31,6 +31,7 @@
     "grunt-jsonlint": "^1.1.0",
     "grunt-nodemon": "^0.4.2",
     "grunt-open": "^0.2.3",
+    "grunt-sass-lint": "^0.2.2",
     "grunt-shell": "^2.1.0",
     "grunt-webpack": "^3.0.2",
     "handlebars": "^4.0.10",
