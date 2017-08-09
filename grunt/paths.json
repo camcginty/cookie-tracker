@@ -9,7 +9,7 @@
       "Gruntfile.js"
     ],
     "spec": [
-      "spec/**/*.spec.js"
+      "spec/**/*.html"
     ],
     "lib": [
       "lib/**/*.js"
