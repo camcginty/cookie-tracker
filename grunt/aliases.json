@@ -15,5 +15,5 @@
   "s": ["server"],
   "make-standard": ["eslint:fix"],
   "nag": ["eslint:all", "jsonlint:all", "sasslint:all"],
-  "test": ["build", "jasmine"]
+  "test": ["build", "mochacli:test"]
 }
