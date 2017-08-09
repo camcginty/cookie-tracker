@@ -1,10 +1,7 @@
-'use strict'
+describe('Example DOM test', function () {
+  const myElement = document.getElementById('myDiv')
 
-const expect = require('chai').expect
-const example = require('../assets/scripts/example')
-
-describe('Example', function () {
-  it('is true', function () {
-    expect(example).to.be.true
+  it('has the right text', function () {
+    (myElement.innerHTML).should.equal('Hello World!')
   })
 })
