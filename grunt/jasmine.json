@@ -1,8 +1,0 @@
-{
-  "tests": {
-    "src": ["public/vendor.js", "public/application.js"],
-    "options": {
-      "specs": "public/specs.js"
-    }
-  }
-}

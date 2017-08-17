@@ -9,7 +9,7 @@
       "Gruntfile.js"
     ],
     "spec": [
-      "spec/**/*.spec.js"
+      "spec/**/*.html"
     ],
     "lib": [
       "lib/**/*.js"
@@ -28,6 +28,12 @@
       "assets/scripts/**/*.json",
       "spec/**/*.json",
       "grunt/*.json"
+    ]
+  },
+
+  "sass": {
+    "all": [
+      "assets/styles/**/*.scss"
     ]
   }
 }
