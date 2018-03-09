@@ -27,21 +27,20 @@ front-end frameworks included.
 
 ## Structure
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
+Developers should store JavaScript files in [`app/scripts`](app/scripts).
 The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
+[`app/scripts/index.js`](app/scripts/index.js). In general, only
 application initialization goes in this file. It's normal for developers to
 start putting all code in this file, but encourage them to break out different
 responsibilities and use the `require` syntax put references where they're
 needed.
 
-Developers should set `config.apiUrls.production` (and
-`config.apiUrls.development` if it differs from the default).  With
-`apiUrls` set, developers may rely on `config.apiUrl` as the base for API
+Developers should set `apiUrls.production` and `apiUrls.development` in [`config/environment.js`](config/environment.js).  With
+`apiUrls` set, developers may rely on `apiUrl` as the base for API
 URLs.
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss).
+Developers should store styles in [`app/styles`](app/styles) and load them
+from [`app/styles/index.scss`](app/styles/index.scss).
 
 Developers should use [getFormFields](get-form-fields.md) to retrieve form data to send to
 an API.
