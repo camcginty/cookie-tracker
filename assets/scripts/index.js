@@ -1,10 +1,9 @@
 'use strict'
 
-const setAPIUrl = require('../../lib/set-api-url')
 const config = require('./config')
 
 $(() => {
-  setAPIUrl(location, config)
+  config.setAPIHost()
 })
 
 // use require with a reference to bundle the file and use it in this file
