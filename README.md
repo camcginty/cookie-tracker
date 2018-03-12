@@ -42,7 +42,8 @@ Developers should set `apiUrls.production` and `apiUrls.development` in
 URLs.
 
 Developers should store styles in [`app/styles`](app/styles) and load them
-from [`app/styles/index.scss`](app/styles/index.scss).
+from [`app/styles/index.scss`](app/styles/index.scss). Bootstrap version 3 is
+included in this template.
 
 Developers should use [getFormFields](get-form-fields.md) to retrieve form data
 to send to an API.
