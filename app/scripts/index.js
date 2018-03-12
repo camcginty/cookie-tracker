@@ -1,9 +1,6 @@
 'use strict'
 
-const config = require('../../config/environment')
-
 $(() => {
-  config.setAPIHost()
 })
 
 // use require with a reference to bundle the file and use it in this file

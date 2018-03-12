@@ -6,15 +6,12 @@ const apiUrls = {
   development: 'http://localhost:4741'
 }
 
-const setAPIHost = function () {
-  if (window.location.hostname === 'localhost') {
-    apiUrl = apiUrls.development
-  } else {
-    apiUrl = apiUrls.production
-  }
+if (window.location.hostname === 'localhost') {
+  apiUrl = apiUrls.development
+} else {
+  apiUrl = apiUrls.production
 }
 
 module.exports = {
-  setAPIHost: setAPIHost,
-  apiUrl: apiUrl
+  apiUrl
 }
