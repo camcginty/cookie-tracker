@@ -1,4 +1,4 @@
-# Forms
+# getFormFields
 
 Developers should use `getFormFields` to retrieve data from html forms for API
  requests.
@@ -10,56 +10,60 @@ The object returned can be used to validate the form data.
 **in `api.js`**
 
 ```js
-'use strict';
+'use strict'
 
 const ajaxDefaults = {
-  url: 'http://localhost:3000',
-};
+  url: 'http://localhost:4741'
+}
 
-const myRequest = (data, success, fail) => {
-  $.ajax(Object.assign({ method: 'POST', data }, ajaxDefaults))
-  .done(success)
-  .fail(fail);
-};
+const myRequest = (data) => {
+  return $.ajax({
+    method: 'POST',
+    data: data,
+    url: ajaxDefaults.url
+  })
+}
 
 module.exports = {
-  myRequest,
-};
+  myRequest
+}
 ```
 
 **in `ui.js`**
 
 ```js
-'use strict';
+'use strict'
 
 const success = (data) => {
   // handle success
-};
+}
 
 const failure = (err) => {
   // handle failure
-};
+}
 
 module.exports = {
   success,
-  failure,
+  failure
 }
 ```
 
 **in `index.js`**
 
 ```js
-'use strict';
+'use strict'
 
-const getFormFields = require('../../lib/get-form-fields');
-const api = require('./api');
-const ui = require('./ui');
+const getFormFields = require('../../lib/get-form-fields')
+const api = require('./api')
+const ui = require('./ui')
 
 $(() => {
   $('#my-form').on('submit', function (e) {
-    let data = getFormFields(this);
-    e.preventDefault();
-    api.myRequest(data, ui.success, ui.failure);
-  });
-});
+    let data = getFormFields(this)
+    e.preventDefault()
+    api.myRequest(data)
+      .then(ui.success)
+      .catch(ui.failure)
+  })
+})
 ```
