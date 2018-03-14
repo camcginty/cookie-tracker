@@ -9,7 +9,6 @@ _SpecRunner.html
 *.svg
 *.ttf
 *.eot
-public/
 
 # Created by https://www.gitignore.io/api/osx,linux
 
