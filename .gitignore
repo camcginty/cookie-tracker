@@ -4,11 +4,6 @@ vendor.js
 specs.js
 application.js
 _SpecRunner.html
-*.woff2
-*.woff
-*.svg
-*.ttf
-*.eot
 
 # Created by https://www.gitignore.io/api/osx,linux
 
