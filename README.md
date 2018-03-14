@@ -28,9 +28,9 @@ front-end frameworks included.
 
 ## Structure
 
-Developers should store JavaScript files in [`app/scripts`](app/scripts).
+Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
 The "manifest" or entry-point is
-[`app/scripts/index.js`](app/scripts/index.js). In general, only
+[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
 application initialization goes in this file. It's normal for developers to
 start putting all code in this file, but encourage them to break out different
 responsibilities and use the `require` syntax put references where they're
@@ -41,8 +41,8 @@ Developers should set `apiUrls.production` and `apiUrls.development` in
 `apiUrls` set, developers may rely on `apiUrl` as the base for API
 URLs.
 
-Developers should store styles in [`app/styles`](app/styles) and load them
-from [`app/styles/index.scss`](app/styles/index.scss). Bootstrap version 3 is
+Developers should store styles in [`assets/styles`](assets/styles) and load them
+from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
 included in this template.
 
 Developers should use [getFormFields](get-form-fields.md) to retrieve form data
