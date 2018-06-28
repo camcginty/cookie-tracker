@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Cookie Tracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,50 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Cookie Tracker</h1>
+      <h2>Current cookie total: [get all number goes here]</h2>
+
+
+        <nav>
+        <ul>
+          <li class="new-Baker pre-sign-in">
+            <h3 class="new-player">New Baker</h3>
+            <form class="get-Baker" id='sign-up-form'>
+              <input name="credentials[email]" placeholder="email" type="email">
+              <input name="credentials[password]" placeholder="password" type="password">
+              <input name="credentials[password_confirmation]" placeholder="password again" type="password">
+              <button type="submit">Sign Up</button>
+            </form>
+          </li>
+          <li class="get-bakr pre-sign-in">
+            <h3>Returning Baker</h3>
+            <form class="get-baker" id='sign-in-form'>
+              <input name="credentials[email]" placeholder="email" type="text">
+              <input name="credentials[password]" placeholder="password" type="password">
+              <button type="submit">Sign In</button>
+            </form>
+          </li>
+          <li class="signed-in" id='add-cookies'>
+            <h3>Add Cookies</h3>
+            <button>Add cookies</button>
+          </li>
+          <li class="signed-in" id='get-cookies'>
+            <h3>Your Current Cookie Count</h3>
+            <button>Show Cookies</button>
+          </li>
+          <li class="signed-in">
+          <h3>New Password</h3>
+          <form id='change-password-form'>
+            <input name="passwords[old]" placeholder="old password" type="password">
+            <input name="passwords[new]" placeholder="new password" type="password">
+            <button type="submit">Change Password</button>
+          </form>
+        </li>
+        <li class="signed-in" id='sign-out'>
+          <h3>Done Playing?</h3>
+          <button>Sign Out</button>
+      </li>
+      </ul>
+      </nav>
     </body>
 </html>
