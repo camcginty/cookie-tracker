@@ -30,7 +30,7 @@ const signInSuccess = function (signInSuccess) {
   // setTimeout(clearText, 2500)
   document.getElementById('sign-in-form').reset()
   document.getElementById('sign-up-form').reset()
-  document.getElementById('change-password-form').reset()
+  // document.getElementById('change-password-form').reset()
   $('.pre-sign-in').hide()
   $('.signed-in').show()
 }
@@ -42,7 +42,7 @@ const signInError = function (signInError) {
   // setTimeout(clearText, 2500)
   document.getElementById('sign-in-form').reset()
   document.getElementById('sign-up-form').reset()
-  document.getElementById('change-password-form').reset()
+  // document.getElementById('change-password-form').reset()
 }
 
 const changePasswordSuccess = function (changePasswordSuccess) {
@@ -51,8 +51,8 @@ const changePasswordSuccess = function (changePasswordSuccess) {
   // $('#info').append('Password changed.')
   // setTimeout(clearText, 2500)
   document.getElementById('change-password-form').reset()
-  document.getElementById('sign-up-form').reset()
-  document.getElementById('sign-in-form').reset()
+  // document.getElementById('sign-up-form').reset()
+  // document.getElementById('sign-in-form').reset()
 }
 
 const changePasswordError = function (changePasswordError) {
@@ -61,8 +61,8 @@ const changePasswordError = function (changePasswordError) {
   // $('#info').append("That didn't work.")
   // setTimeout(clearText, 2500)
   document.getElementById('change-password-form').reset()
-  document.getElementById('sign-up-form').reset()
-  document.getElementById('sign-in-form').reset()
+  // document.getElementById('sign-up-form').reset()
+  // document.getElementById('sign-in-form').reset()
 }
 
 const signOutSuccess = function (signOutSuccess) {
@@ -81,6 +81,48 @@ const signOutError = function (signOutError) {
   // setTimeout(clearText, 2500)
 }
 
+const addCookieSuccess = function () {
+  console.log('ui.addCookieSuccess function')
+  // clearText()
+  // document.getElementById('info').textContent = 'Welcome, ' + store.user.email + '!'
+  // setTimeout(clearText, 2500)
+  document.getElementById('add-cookie-form').reset()
+  // document.getElementById('sign-up-form').reset()
+  document.getElementById('change-password-form').reset()
+}
+
+const addCookieError = function () {
+  console.log('ui.addCookieError function')
+  // clearText()
+  // $('#info').append('Broken! Try again.')
+  // setTimeout(clearText, 2500)
+  // document.getElementById('sign-in-form').reset()
+  // document.getElementById('sign-up-form').reset()
+  document.getElementById('change-password-form').reset()
+  document.getElementById('add-cookie-form').reset()
+}
+
+const getCookieSuccess = function () {
+  console.log('ui.getCookieSuccess function')
+  // clearText()
+  // document.getElementById('info').textContent = 'Welcome, ' + store.user.email + '!'
+  // setTimeout(clearText, 2500)
+  document.getElementById('add-cookie-form').reset()
+  // document.getElementById('sign-up-form').reset()
+  document.getElementById('change-password-form').reset()
+}
+
+const getCookieError = function () {
+  console.log('ui.getCookieError function')
+  // clearText()
+  // $('#info').append('Broken! Try again.')
+  // setTimeout(clearText, 2500)
+  // document.getElementById('sign-in-form').reset()
+  // document.getElementById('sign-up-form').reset()
+  document.getElementById('change-password-form').reset()
+  document.getElementById('add-cookie-form').reset()
+}
+
 module.exports = {
   signUpSuccess,
   signUpError,
@@ -89,5 +131,9 @@ module.exports = {
   changePasswordSuccess,
   changePasswordError,
   signOutSuccess,
-  signOutError
+  signOutError,
+  addCookieSuccess,
+  addCookieError,
+  getCookieSuccess,
+  getCookieError
 }

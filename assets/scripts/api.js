@@ -48,9 +48,34 @@ const signOut = function () {
   })
 }
 
+const addCookies = function (data) {
+  console.log('api.addCookies function')
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/cookies',
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const getCookies = function () {
+  console.log('api.getCookies function')
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/cookies',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  addCookies,
+  getCookies
 }
