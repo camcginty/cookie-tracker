@@ -18,16 +18,16 @@
 
         <nav>
         <ul>
-          <li class="new-Baker pre-sign-in">
-            <h3 class="new-player">New Baker</h3>
-            <form class="get-Baker" id='sign-up-form'>
+          <li class="pre-sign-in">
+            <h3 class="new-baker">New Baker</h3>
+            <form class="get-baker" id='sign-up-form'>
               <input name="credentials[email]" placeholder="email" type="email">
               <input name="credentials[password]" placeholder="password" type="password">
               <input name="credentials[password_confirmation]" placeholder="password again" type="password">
               <button type="submit">Sign Up</button>
             </form>
           </li>
-          <li class="get-bakr pre-sign-in">
+          <li class="pre-sign-in">
             <h3>Returning Baker</h3>
             <form class="get-baker" id='sign-in-form'>
               <input name="credentials[email]" placeholder="email" type="text">
@@ -37,7 +37,12 @@
           </li>
           <li class="signed-in" id='add-cookies'>
             <h3>Add Cookies</h3>
-            <button>Add cookies</button>
+            <form class='add-cookies' id='add-cookie-form'>
+              <input name='cookie[cookie-name]' placeholder="chocolate chip" type="text">
+              <input name="amount" placeholder="number baked" type="text">
+              <input name="distributable-units" placeholder="number of baggies" type="text">
+            <button type="submit">Add cookies</button>
+          </form>
           </li>
           <li class="signed-in" id='get-cookies'>
             <h3>Your Current Cookie Count</h3>
@@ -52,7 +57,7 @@
           </form>
         </li>
         <li class="signed-in" id='sign-out'>
-          <h3>Done Playing?</h3>
+          <h3>Leaving?</h3>
           <button>Sign Out</button>
       </li>
       </ul>
