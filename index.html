@@ -38,15 +38,24 @@
           <li class="signed-in" id='add-cookies'>
             <h3>Add Cookies</h3>
             <form class='add-cookies' id='add-cookie-form'>
-              <input name='cookie[cookie-name]' placeholder="chocolate chip" type="text">
-              <input name="amount" placeholder="number baked" type="text">
-              <input name="distributable-units" placeholder="number of baggies" type="text">
+              <input name='cookie[cookieName]' placeholder="chocolate chip" type="text">
+              <input name="cookie[amount]" placeholder="number baked" type="text">
+              <input name="cookie[distributableUnits]" placeholder="number of baggies" type="text">
             <button type="submit">Add cookies</button>
           </form>
           </li>
           <li class="signed-in" id='get-cookies'>
             <h3>Your Current Cookie Count</h3>
             <button>Show Cookies</button>
+          </li>
+          <li class="signed-in" id='edit-cookies'>
+            <h3>Edit Cookies</h3>
+            <form id='edit-cookies-form'>
+            <input name='cookie[cookieName]' placeholder="chocolate chip" type="text">
+            <input name="cookie[amount]" placeholder="number baked" type="text">
+            <input name="cookie[distributableUnits]" placeholder="number of baggies" type="text">
+            <button type="submit">Update</button>
+          </form>
           </li>
           <li class="signed-in">
           <h3>New Password</h3>
@@ -62,5 +71,7 @@
       </li>
       </ul>
       </nav>
+      <div id='info'>
+      </div>
     </body>
 </html>

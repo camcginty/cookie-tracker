@@ -18,7 +18,7 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#add-cookie-form').on('submit', events.onAddCookies)
   $('#get-cookies').on('click', events.onGetCookies)
-  // $('#new.game').on('click', gamePlayEvents.createGame)
+  $('#edit-cookies-form').on('submit', events.onEditCookies)
   // $('.box').on('click', gamePlayEvents.playHere)
 })
 
@@ -29,5 +29,7 @@ $(() => {
 // - add get cookies total (all cookies, always visible) .reduce?
 // - add get cookies for users (list of types and numbers)
 // - add cookie totals per user (always number next to user?)
+// - update cookies: find id number (required) in order to update
+// - when showing user's cookies, add edit/delete buttons next to each
 //
 // done:
