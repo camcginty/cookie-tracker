@@ -71,11 +71,36 @@ const getCookies = function () {
   })
 }
 
+const editCookies = function (data) {
+  console.log('api.addCookies function')
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/cookies/' + data.cookie.id,
+    data: data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const deleteCookies = function (data) {
+  console.log('api deleteCookies function')
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/cookies/' + data.cookie.id,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
   addCookies,
-  getCookies
+  getCookies,
+  editCookies,
+  deleteCookies
 }
