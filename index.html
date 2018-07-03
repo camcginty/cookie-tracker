@@ -22,6 +22,7 @@
             <h3 class="new-baker">New Baker</h3>
             <form class="get-baker" id='sign-up-form'>
               <input name="credentials[email]" placeholder="email" type="email">
+              <input name="credentials[screen_name]" placeholder="cookie brigade user name" type="text">
               <input name="credentials[password]" placeholder="password" type="password">
               <input name="credentials[password_confirmation]" placeholder="password again" type="password">
               <button type="submit">Sign Up</button>
@@ -48,13 +49,13 @@
             <h3>Your Current Cookie Count</h3>
             <button>Show Cookies</button>
           </li>
-          <li class="signed-in" id='edit-cookies'>
+          <!-- <li class="signed-in" id='edit-cookies'>
             <h3>Edit Cookies</h3>
             <form id='edit-cookies-form'>
             <input name='cookie[cookieName]' placeholder="chocolate chip" type="text">
             <input name="cookie[amount]" placeholder="number baked" type="text">
             <input name="cookie[distributableUnits]" placeholder="number of baggies" type="text">
-            <button type="submit">Update</button>
+            <button type="submit">Update</button> -->
           </form>
           </li>
           <li class="signed-in">
@@ -73,5 +74,14 @@
       </nav>
       <div id='info'>
       </div>
+      <table class="signed-in" id="cookie-table">
+        <tr>
+          <th>Cookies</th>
+          <th>Baked</th>
+          <th>Bags</th>
+          <tbody>
+          </tbody>
+        </tr>
+      </table>
     </body>
 </html>

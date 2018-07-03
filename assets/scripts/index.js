@@ -19,17 +19,19 @@ $(() => {
   $('#add-cookie-form').on('submit', events.onAddCookies)
   $('#get-cookies').on('click', events.onGetCookies)
   $('#edit-cookies-form').on('submit', events.onEditCookies)
-  // $('.box').on('click', gamePlayEvents.playHere)
+  $('body').on('click', '.edit-button', events.onEditCookies)
 })
 
 // to-do:
-// - css
-// - add CB logo?
-// - add PAX logo?
+// - created cookies being added to cookies table twice
 // - add get cookies total (all cookies, always visible) .reduce?
 // - add get cookies for users (list of types and numbers)
 // - add cookie totals per user (always number next to user?)
 // - update cookies: find id number (required) in order to update
 // - when showing user's cookies, add edit/delete buttons next to each
+// - log in message greets them by screenname instead of email
+// - css
+// - add CB logo?
+// - add PAX logo?
 //
 // done:

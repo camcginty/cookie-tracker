@@ -13,7 +13,7 @@ const onAddCookies = function (event) {
     .catch(authUi.addCookiesError)
 }
 
-const onGetCookies = function (event) {
+const onGetCookies = function () {
   console.log('events.onGetCookies function')
   event.preventDefault()
   authApi.getCookies()
