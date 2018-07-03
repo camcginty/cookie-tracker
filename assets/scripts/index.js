@@ -25,7 +25,6 @@ $(() => {
 // to-do:
 // - created cookies being added to cookies table twice
 // - add get cookies total (all cookies, always visible) .reduce?
-// - add get cookies for users (list of types and numbers)
 // - add cookie totals per user (always number next to user?)
 // - update cookies: find id number (required) in order to update
 // - when showing user's cookies, add edit/delete buttons next to each

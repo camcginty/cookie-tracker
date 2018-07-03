@@ -93,51 +93,36 @@ const addCookiesError = function () {
 }
 
 let userId = null
-let userCookies = []
-let dataCookies = []
+const userCookies = []
 
 const getCookiesSuccess = function (data) {
   console.log('ui.getCookieSuccess function')
   clearText()
   userId = store.user.id
   console.log('user id is ' + userId)
-  console.log(userCookies)
-  // makeDataCookies(data)
-  debugger
-  // tableDisplay(data, userId)
+  document.getElementById('info').append(data.cookies.length)
+  makeUserCookies(data, userId)
+  populateTable()
   document.getElementById('info').append(data.cookies.length)
   document.getElementById('add-cookie-form').reset()
   document.getElementById('change-password-form').reset()
 }
-//
-// const makeDataCookies = function (data) {
-//   for (let i = 0; i <= dataCookies.length; i++) {
-//     userCookies.push(data.cookies[i])
-//   } console.log('userCookies is now ' + userCookies)
-// }
-//
-// const tableDisplay = function (data, userId) {
-//   console.log('tableDisplay function')
-//   debugger
-//   userCookies = data.cookies.filter(dataCookies.user.id === userId)
-//   console.log(userCookies)
-// }
-//   for (let i = 0; i <= data.cookies.length; i++) {
-//     debugger
-//     if (data.cookies[i].user !== userId) {
-//       console.log(data.cookies[i])
-//       console.log(data.cookies[i].user + " doesn't match")
-//       i++
-//     } else {
-//       userCookies.push(data.cookies[i])
-//       console.log(data.cookies[i])
-//       console.log(data.cookies[i].user + ' does match')
-//       console.log(userCookies)
-//       i++
-//     }
-//     updateTable()
-//   }
-// }
+
+const makeUserCookies = function (data, userId) {
+  console.log('make user cookies array function')
+  for (let i = 0; i < data.cookies.length; i++) {
+    if (data.cookies[i].user !== null) {
+      if (data.cookies[i].user.id === userId) {
+        userCookies.push(data.cookies[i])
+        console.log(data.cookies[i].user + ' does match')
+      } else {
+        console.log(data.cookies[i].user + " doesn't match")
+      }
+    } else {
+      console.log('user is null')
+    }
+  }
+}
 
 const getCookiesError = function () {
   console.log('ui.getCookieError function')
@@ -167,6 +152,16 @@ const editCookiesError = function () {
   // document.getElementById('edit-cookies-form').reset()
   document.getElementById('change-password-form').reset()
   document.getElementById('add-cookie-form').reset()
+}
+
+const populateTable = function () {
+  console.log('populate table function')
+  for (let i = 0; i < userCookies.length; i++) {
+    console.log(userCookies[i].cookieName)
+    const row = '<tr><td>' + userCookies[i].cookieName + '</td><td>' + userCookies[i].amount + '</td><td>' +
+  userCookies[i].distributableUnits + '</td><td><button class="edit-button">Edit</button></td></tr>'
+    $('tbody').append(row)
+  }
 }
 
 const updateTable = function (data) {
