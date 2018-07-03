@@ -13,7 +13,7 @@ const onSignUp = function (event) {
   console.log('data is ' + data)
   authApi.signUp(data)
     .then(authUi.signUpSuccess)
-    .catch(authUi.signUpError)
+    .catch(authUi.error)
 }
 
 const onSignIn = function (event) {
@@ -23,7 +23,7 @@ const onSignIn = function (event) {
   console.log('data is ' + data)
   authApi.signIn(data)
     .then(authUi.signInSuccess)
-    .catch(authUi.signInError)
+    .catch(authUi.error)
 }
 
 const onChangePassword = function (event) {
@@ -33,7 +33,7 @@ const onChangePassword = function (event) {
   console.log('event.target is ' + event.target)
   authApi.changePassword(data)
     .then(authUi.changePasswordSuccess)
-    .catch(authUi.changePasswordError)
+    .catch(authUi.error)
 }
 
 const onSignOut = function (event) {
@@ -43,7 +43,7 @@ const onSignOut = function (event) {
   // gameplayEvents.clearBoard()
   authApi.signOut()
     .then(authUi.signOutSuccess)
-    .catch(authUi.signOutError)
+    .catch(authUi.error)
 }
 
 module.exports = {

@@ -3,7 +3,7 @@
 const authApi = require('./api.js')
 const authUi = require('./ui.js')
 const getFormFields = require('../../lib/get-form-fields')
-const store = require('./store')
+// const store = require('./store')
 
 const onAddCookies = function (event) {
   console.log('events add cookies function')
@@ -11,7 +11,7 @@ const onAddCookies = function (event) {
   const data = getFormFields(event.target)
   authApi.addCookies(data)
     .then(authUi.addCookiesSuccess)
-    .catch(authUi.addCookiesError)
+    .catch(authUi.error)
 }
 
 const onGetCookies = function () {
@@ -19,7 +19,7 @@ const onGetCookies = function () {
   event.preventDefault()
   authApi.getCookies()
     .then(authUi.getCookiesSuccess)
-    .catch(authUi.getCookiesError)
+    .catch(authUi.error)
 }
 
 let thisId = null
@@ -52,7 +52,7 @@ const onEditCookies = function (thisId) {
   console.log(data)
   authApi.editCookies(data)
     .then(authUi.editCookiesSuccess)
-    .catch(authUi.editCookiesError)
+    .catch(authUi.error)
 }
 
 const onDeleteCookies = function (thisId) {
@@ -62,7 +62,7 @@ const onDeleteCookies = function (thisId) {
   console.log(data)
   authApi.deleteCookies(data)
     .then(authUi.deleteCookiesSuccess)
-    .catch(authUi.deleteCookiesError)
+    .catch(authUi.error)
 }
 
 module.exports = {
