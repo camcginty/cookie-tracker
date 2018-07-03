@@ -75,8 +75,19 @@ const editCookies = function (data) {
   console.log('api.addCookies function')
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/cookies',
+    url: config.apiUrl + '/cookies/' + data.cookie.id,
     data: data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const deleteCookies = function (data) {
+  console.log('api deleteCookies function')
+  return $.ajax({
+    method: 'DELETE',
+    url: config.apiUrl + '/cookies/' + data.cookie.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -90,5 +101,6 @@ module.exports = {
   signOut,
   addCookies,
   getCookies,
-  editCookies
+  editCookies,
+  deleteCookies
 }

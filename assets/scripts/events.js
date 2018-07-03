@@ -3,6 +3,7 @@
 const authApi = require('./api.js')
 const authUi = require('./ui.js')
 const getFormFields = require('../../lib/get-form-fields')
+const store = require('./store')
 
 const onAddCookies = function (event) {
   console.log('events add cookies function')
@@ -21,17 +22,53 @@ const onGetCookies = function () {
     .catch(authUi.getCookiesError)
 }
 
-const onEditCookies = function (event) {
-  console.log('events onEditCookies function')
+let thisId = null
+let thisName = null
+let thisAmount = null
+let thisUnits = null
+
+const onEditButton = function () {
+  console.log('events edit button')
   event.preventDefault()
+  $('#edit-cookies').show()
+  thisId = this.id
+  thisName = this.name
+  thisAmount = this.amount
+  thisUnits = this.distributableUnits
+  autoFill(thisId, thisName, thisAmount, thisUnits)
+}
+
+const autoFill = function (thisId, thisName, thisAmount, thisUnits) {
+  document.getElementById('autofill-id').value = thisId
+  document.getElementById('autofill-name').value = thisName
+  document.getElementById('autofill-amount').value = thisAmount
+  document.getElementById('autofill-units').value = thisUnits
+}
+
+const onEditCookies = function (thisId) {
+  event.preventDefault()
+  console.log('events onEditCookies function')
   const data = getFormFields(event.target)
+  console.log(data)
   authApi.editCookies(data)
     .then(authUi.editCookiesSuccess)
     .catch(authUi.editCookiesError)
 }
 
+const onDeleteCookies = function (thisId) {
+  event.preventDefault()
+  console.log('events onDeleteCookies function')
+  const data = getFormFields(event.target)
+  console.log(data)
+  authApi.deleteCookies(data)
+    .then(authUi.deleteCookiesSuccess)
+    .catch(authUi.deleteCookiesError)
+}
+
 module.exports = {
   onAddCookies,
   onGetCookies,
-  onEditCookies
+  onEditCookies,
+  onEditButton,
+  onDeleteCookies
 }

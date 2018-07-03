@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('./store')
+const showCookiesTemplate = require('./templates/cookie-listing.handlebars')
 
 const signUpSuccess = function (signUpSuccess) {
   console.log('ui.signUpsuccess function')
@@ -92,36 +93,15 @@ const addCookiesError = function () {
   document.getElementById('add-cookie-form').reset()
 }
 
-let userId = null
-const userCookies = []
-
-const getCookiesSuccess = function (data) {
-  console.log('ui.getCookieSuccess function')
+const getCookiesSuccess = (data) => {
+  console.log('ui getCookiesSuccess function')
+  console.log('data is ', data)
+  const showCookiesHtml = showCookiesTemplate({ cookies: data.cookies })
   clearText()
-  userId = store.user.id
-  console.log('user id is ' + userId)
-  document.getElementById('info').append(data.cookies.length)
-  makeUserCookies(data, userId)
-  populateTable()
-  document.getElementById('info').append(data.cookies.length)
   document.getElementById('add-cookie-form').reset()
   document.getElementById('change-password-form').reset()
-}
-
-const makeUserCookies = function (data, userId) {
-  console.log('make user cookies array function')
-  for (let i = 0; i < data.cookies.length; i++) {
-    if (data.cookies[i].user !== null) {
-      if (data.cookies[i].user.id === userId) {
-        userCookies.push(data.cookies[i])
-        console.log(data.cookies[i].user + ' does match')
-      } else {
-        console.log(data.cookies[i].user + " doesn't match")
-      }
-    } else {
-      console.log('user is null')
-    }
-  }
+  store.cookie = data.cookies
+  $('#info').append(showCookiesHtml)
 }
 
 const getCookiesError = function () {
@@ -137,10 +117,12 @@ const getCookiesError = function () {
 const editCookiesSuccess = function (data) {
   console.log('ui.editCookieSuccess function')
   clearText()
-  document.getElementById('info').textContent = 'Updated to ' + data.cookie.distributableUnits + ' baggies of ' + data.cookie.cookieName
   updateTable(data)
+  $('#edit-cookies').hide()
+  store.cookie = data.cookie
+  console.log('data.cookie is ', data.cookie)
   document.getElementById('add-cookie-form').reset()
-  // document.getElementById('edit-cookies-form').reset()
+  document.getElementById('edit-cookies-form').reset()
   document.getElementById('change-password-form').reset()
 }
 
@@ -149,19 +131,29 @@ const editCookiesError = function () {
   clearText()
   $('#info').append('Broken! Try again.')
   // document.getElementById('sign-in-form').reset()
-  // document.getElementById('edit-cookies-form').reset()
+  document.getElementById('edit-cookies-form').reset()
   document.getElementById('change-password-form').reset()
   document.getElementById('add-cookie-form').reset()
 }
 
-const populateTable = function () {
-  console.log('populate table function')
-  for (let i = 0; i < userCookies.length; i++) {
-    console.log(userCookies[i].cookieName)
-    const row = '<tr><td>' + userCookies[i].cookieName + '</td><td>' + userCookies[i].amount + '</td><td>' +
-  userCookies[i].distributableUnits + '</td><td><button class="edit-button">Edit</button></td></tr>'
-    $('tbody').append(row)
-  }
+const deleteCookiesSuccess = function () {
+  console.log('ui deleteCookiesSuccess function')
+  $('#edit-cookies').hide()
+  // remove that row from table
+  clearText()
+  document.getElementById('edit-cookies-form').reset()
+  document.getElementById('change-password-form').reset()
+  document.getElementById('add-cookie-form').reset()
+}
+
+const deleteCookiesError = function () {
+  console.log('ui.deleteCookieError function')
+  clearText()
+  $('#info').append('Broken! Try again.')
+  // document.getElementById('sign-in-form').reset()
+  document.getElementById('edit-cookies-form').reset()
+  document.getElementById('change-password-form').reset()
+  document.getElementById('add-cookie-form').reset()
 }
 
 const updateTable = function (data) {
@@ -188,5 +180,7 @@ module.exports = {
   getCookiesSuccess,
   getCookiesError,
   editCookiesSuccess,
-  editCookiesError
+  editCookiesError,
+  deleteCookiesSuccess,
+  deleteCookiesError
 }

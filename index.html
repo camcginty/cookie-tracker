@@ -49,13 +49,15 @@
             <h3>Your Current Cookie Count</h3>
             <button>Show Cookies</button>
           </li>
-          <!-- <li class="signed-in" id='edit-cookies'>
+          <li id='edit-cookies'>
             <h3>Edit Cookies</h3>
             <form id='edit-cookies-form'>
-            <input name='cookie[cookieName]' placeholder="chocolate chip" type="text">
-            <input name="cookie[amount]" placeholder="number baked" type="text">
-            <input name="cookie[distributableUnits]" placeholder="number of baggies" type="text">
-            <button type="submit">Update</button> -->
+            <input name='cookie[id]' type="text" id="autofill-id" readonly>
+            <input name='cookie[cookieName]' type="text" id="autofill-name">
+            <input name="cookie[amount]" type="text" id="autofill-amount">
+            <input name="cookie[distributableUnits]" type="text" id="autofill-units">
+            <button type="submit">Update</button>
+            <button type="click" id='delete-cookies'>Delete</button>
           </form>
           </li>
           <li class="signed-in">

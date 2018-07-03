@@ -12,22 +12,22 @@ const events = require('./events.js')
 $(() => {
   $('.pre-sign-in').show()
   $('.signed-in').hide()
+  $('#edit-cookies').hide()
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#change-password-form').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#add-cookie-form').on('submit', events.onAddCookies)
   $('#get-cookies').on('click', events.onGetCookies)
-  $('#edit-cookies-form').on('submit', events.onEditCookies)
-  $('body').on('click', '.edit-button', events.onEditCookies)
+  $('body').on('click', '.edit-button', events.onEditButton)
+  $('body').on('submit', '#edit-cookies-form', events.onEditCookies)
+  $('body').on('submit', '#delete-cookies', events.onDeleteCookies)
 })
 
 // to-do:
 // - created cookies being added to cookies table twice
 // - add get cookies total (all cookies, always visible) .reduce?
 // - add cookie totals per user (always number next to user?)
-// - update cookies: find id number (required) in order to update
-// - when showing user's cookies, add edit/delete buttons next to each
 // - log in message greets them by screenname instead of email
 // - css
 // - add CB logo?
