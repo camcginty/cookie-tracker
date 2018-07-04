@@ -61,7 +61,6 @@ const editCookiesSuccess = function (data) {
   console.log('ui.editCookieSuccess function')
   formResets()
   clearText()
-  // updateTable(data)
   $('#edit-cookies').hide()
   store.cookie = data.cookie
   console.log('data.cookie is ', data.cookie)

@@ -3,7 +3,6 @@
 const authApi = require('./api.js')
 const authUi = require('./ui.js')
 const getFormFields = require('../../lib/get-form-fields')
-// const store = require('./store')
 
 const onAddCookies = function (event) {
   console.log('events add cookies function')
@@ -31,6 +30,7 @@ const onEditButton = function () {
   console.log('events edit button')
   event.preventDefault()
   $('#edit-cookies').show()
+  debugger
   thisId = this.id
   thisName = this.name
   thisAmount = this.amount

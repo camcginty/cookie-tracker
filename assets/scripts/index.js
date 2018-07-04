@@ -24,7 +24,16 @@ $(() => {
   $('body').on('submit', '#delete-cookies', events.onDeleteCookies)
 })
 
+const getCookies = function () {
+  events.onGetCookies()
+}
+
 // to-do:
+// - show cookies table automatically when user signs in
+// - update cookies table in real time (refresh after edit/delete)
+// - get rid of any need for show cookies button
+// - delete might not be deleting object? just emptying it of data?
+// - autopopulate edit form with more than just id number (store cookie?)
 // - created cookies being added to cookies table twice
 // - add get cookies total (all cookies, always visible) .reduce?
 // - add cookie totals per user (always number next to user?)
@@ -32,5 +41,10 @@ $(() => {
 // - css
 // - add CB logo?
 // - add PAX logo?
+// - add cb cookie in header next to tab name
 //
 // done:
+
+module.exports = {
+  getCookies
+}
