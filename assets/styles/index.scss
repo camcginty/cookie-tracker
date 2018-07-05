@@ -1,2 +1,68 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+body {
+  background-color: #fff;
+  background-image: url('http://www.cookiebrigade.org/wp/wp-content/uploads/Cookie-pixel-tile-10opacity.jpg');
+  background-repeat: repeat;
+  color: #1d83ce;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 75px;
+}
+
+table {
+  background-color: white;
+  border: 2px;
+  border-color: #1d83ce;
+  padding-top: 20px;
+  width: 100%;
+}
+
+th {
+  border: 2px;
+  border-color: #1d83ce;
+  padding: 15px;
+  text-align: left;
+}
+
+td {
+  border: 5px;
+  border-color: #1d83ce;
+  padding: 15px;
+  width: 33%;
+}
+
+ul.links {
+  list-style-type: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  float: left;
+  padding: 50px;
+  width: 50%;
+}
+
+.bullet-point {
+  height: 25px;
+  width: 25px;
+}
+
+.event {
+  height: 100px;
+  padding-left: 10px;
+}
+
+#head-image {
+  height: 150px;
+  padding: 10px, 0;
+}

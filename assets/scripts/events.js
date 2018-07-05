@@ -2,10 +2,10 @@
 
 const authApi = require('./api.js')
 const authUi = require('./ui.js')
+const store = require('./store.js')
 const getFormFields = require('../../lib/get-form-fields')
 
 const onAddCookies = function (event) {
-  console.log('events add cookies function')
   event.preventDefault()
   const data = getFormFields(event.target)
   authApi.addCookies(data)
@@ -14,7 +14,6 @@ const onAddCookies = function (event) {
 }
 
 const onGetCookies = function () {
-  console.log('events.onGetCookies function')
   event.preventDefault()
   authApi.getCookies()
     .then(authUi.getCookiesSuccess)
@@ -22,46 +21,52 @@ const onGetCookies = function () {
 }
 
 let thisId = null
-let thisName = null
-let thisAmount = null
-let thisUnits = null
+// let thisName = null
+// let thisAmount = null
+// let thisUnits = null
 
 const onEditButton = function () {
-  console.log('events edit button')
   event.preventDefault()
   $('#edit-cookies').show()
-  debugger
   thisId = this.id
-  thisName = this.name
-  thisAmount = this.amount
-  thisUnits = this.distributableUnits
-  autoFill(thisId, thisName, thisAmount, thisUnits)
+  store.thisCookie = thisId
+  // thisName = this.name
+  // thisAmount = this.amount
+  // thisUnits = this.distributableUnits
+  document.getElementById('autofilled').value = thisId
 }
 
-const autoFill = function (thisId, thisName, thisAmount, thisUnits) {
+const autoFill = function (thisId) {
   document.getElementById('autofill-id').value = thisId
-  document.getElementById('autofill-name').value = thisName
-  document.getElementById('autofill-amount').value = thisAmount
-  document.getElementById('autofill-units').value = thisUnits
+  // document.getElementById('autofill-name').value = thisName
+  // document.getElementById('autofill-amount').value = thisAmount
+  // document.getElementById('autofill-units').value = thisUnits
 }
 
 const onEditCookies = function (thisId) {
   event.preventDefault()
-  console.log('events onEditCookies function')
   const data = getFormFields(event.target)
-  console.log(data)
   authApi.editCookies(data)
     .then(authUi.editCookiesSuccess)
     .catch(authUi.error)
 }
 
-const onDeleteCookies = function (thisId) {
+const onDeleteButton = function () {
   event.preventDefault()
-  console.log('events onDeleteCookies function')
+  $('#delete-cookies').show()
+  thisId = this.id
+  store.thisCookie = thisId
+  // thisName = this.name
+  // thisAmount = this.amount
+  // thisUnits = this.distributableUnits
+  autoFill(thisId)
+}
+
+const onDeleteCookies = function () {
+  event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
   authApi.deleteCookies(data)
-    .then(authUi.deleteCookiesSuccess)
+    .then(authUi.deleteCookiesSuccess(data))
     .catch(authUi.error)
 }
 
@@ -70,5 +75,6 @@ module.exports = {
   onGetCookies,
   onEditCookies,
   onEditButton,
-  onDeleteCookies
+  onDeleteCookies,
+  onDeleteButton
 }

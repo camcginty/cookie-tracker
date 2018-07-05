@@ -12,11 +12,22 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Cookie Tracker</h1>
-      <h2>Current cookie total: [get all number goes here]</h2>
-
-
-        <nav>
+      <h1><img id='head-image' src="https://www.cookiebrigade.org/wp/wp-content/uploads/Cb.png">  The Cookie Brigade's Cookie Tracker</h1>
+      <div class="box">
+      <h2 class="pre-sign-in">What is the Cookie Brigade?</h2>
+      <p class="pre-sign-in">
+        We're a fundraising group for Child's Play Charity. We bake to distribute at gaming conventions while collecting donations to pass on to Child's Play. We've raised over $450k for them since our start in 2007.
+        <ul class="links pre-sign-in">
+          <li><img class="bullet-point" src="https://www.cookiebrigade.org/wp/wp-content/uploads/Cb.png"> <a href="https://www.cookiebrigade.org/wp/">Cookie Brigade main website</a></li>
+          <li><img class="bullet-point" src="https://www.cookiebrigade.org/wp/wp-content/uploads/childsplay_logo.jpg"> <a href="http://childsplaycharity.org/">Child's Play website</a></li>
+        </ul>
+      </p>
+      <h2 class="pre-sign-in">Why a cookie tracker?</h2>
+      <p class="pre-sign-in">
+        There are lots of gamers to feed at each convention and they are sad when we don't have cookies. If we know what we have coming, we know what and how much more we need.
+      </p>
+      <!-- <h2 class="pre-sign-in">Current cookie total: [get all number goes here]</h2> -->
+      <div id="info"></div>
         <ul>
           <li class="pre-sign-in">
             <h3 class="new-baker">New Baker</h3>
@@ -39,28 +50,30 @@
           <li class="signed-in" id='add-cookies'>
             <h3>Add Cookies</h3>
             <form class='add-cookies' id='add-cookie-form'>
-              <input name='cookie[cookieName]' placeholder="chocolate chip" type="text">
+              <input name='cookie[cookieName]' placeholder="cookie type" type="text">
               <input name="cookie[amount]" placeholder="number baked" type="text">
-              <input name="cookie[distributableUnits]" placeholder="number of baggies" type="text">
+              <input name="cookie[distributableUnits]" placeholder="number of bags" type="text">
             <button type="submit">Add cookies</button>
           </form>
-          </li>
-          <li class="signed-in" id='get-cookies'>
-            <h3>Your Current Cookie Count</h3>
-            <button>Show Cookies</button>
           </li>
           <li id='edit-cookies'>
             <h3>Edit Cookies</h3>
             <form id='edit-cookies-form'>
-            <input name='cookie[id]' type="text" id="autofill-id" readonly>
-            <input name='cookie[cookieName]' type="text" id="autofill-name">
-            <input name="cookie[amount]" type="text" id="autofill-amount">
-            <input name="cookie[distributableUnits]" type="text" id="autofill-units">
+            <input name='cookie[id]' type="text" id="autofilled" readonly>
+            <input name='cookie[cookieName]' type="text" id="autofill-name" placeholder='cookie type'>
+            <input name="cookie[amount]" type="text" id="autofill-amount" placeholder='new baked count'>
+            <input name="cookie[distributableUnits]" type="text" id="autofill-units" placeholder='new bagged count'>
             <button type="submit">Update</button>
-            <button type="click" id='delete-cookies'>Delete</button>
           </form>
-          </li>
-          <li class="signed-in">
+        </li>
+        <li id='delete-cookies'>
+          <h3>Delete These Cookies?</h3>
+          <form id='delete-cookies-form'>
+          <input name='cookie[id]' type="text" id="autofill-id" readonly>
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+        <li class="signed-in">
           <h3>New Password</h3>
           <form id='change-password-form'>
             <input name="passwords[old]" placeholder="old password" type="password">
@@ -73,8 +86,25 @@
           <button>Sign Out</button>
       </li>
       </ul>
-      </nav>
-      <div id='info'>
+    </div>
+    <div class="box">
+      <h2>Next Event: <img class="event" src="https://www.cookiebrigade.org/wp/wp-content/uploads/PAX-West.png"></h2>
+      <div class="signed-in" id='get-cookies'>
+        <h3>Your Current Cookies</h3>
+        <button id="show">Show Cookies</button><button id="refresh">Refresh</button>
       </div>
+      <div>
+        <table class="box signed-in" id="cookie-table">
+          <thead>
+            <th>Cookies</th>
+            <th>Baked</th>
+            <th>Bags</th>
+          </thead>
+
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
     </body>
 </html>
