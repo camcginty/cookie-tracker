@@ -6,32 +6,27 @@ const showCookiesTemplate = require('./templates/cookie-listing.handlebars')
 let signedIn = false
 
 const signUpSuccess = function (signUpSuccess) {
-  console.log('ui.signUpsuccess function')
   formResets()
   clearText()
   $('#info').append('You now have an account. Please sign in.')
 }
 
 const signInSuccess = function (data) {
-  console.log('ui.signInSuccess function')
   store.user = data.user
   formResets()
   clearText()
   signedIn = true
-  $('#info').append('Welcome, ' + data.user.screen_name + '!')
   $('.pre-sign-in').hide()
   $('.signed-in').show()
 }
 
 const changePasswordSuccess = function (changePasswordSuccess) {
-  console.log('ui.changePasswordSuccess function')
   formResets()
   clearText()
   $('#info').append('Password changed.')
 }
 
 const signOutSuccess = function (signOutSuccess) {
-  console.log('ui.signOutSuccess function')
   formResets()
   clearText()
   signedIn = false
@@ -44,39 +39,44 @@ const addCookiesSuccess = function (data) {
   console.log('ui.addCookieSuccess function')
   formResets()
   clearText()
-  // updateTable(data)
+  $('#info').append('Noted! Press refresh to see your updated cookie list.')
+  // addToTable(data)
 }
 
 const getCookiesSuccess = (data) => {
-  console.log('ui getCookiesSuccess function')
-  console.log('data is ', data)
-  const showCookiesHtml = showCookiesTemplate({ cookies: data.cookies })
+  cookieTable(data)
   formResets()
   clearText()
   store.cookie = data.cookies
-  $('#info').append(showCookiesHtml)
+  $('#show').hide()
+  $('#refresh').show()
+}
+
+const cookieTable = function (data) {
+  $('td').remove()
+  const showCookiesHtml = showCookiesTemplate({ cookies: data.cookies })
+  $('thead').append(showCookiesHtml)
 }
 
 const editCookiesSuccess = function (data) {
-  console.log('ui.editCookieSuccess function')
   formResets()
   clearText()
-  // updateTable(data)
   $('#edit-cookies').hide()
-  store.cookie = data.cookie
-  console.log('data.cookie is ', data.cookie)
+  $('#delete-cookies').hide()
+  $('#info').append('Noted! Press refresh to see your updated cookie list.')
 }
 
-const deleteCookiesSuccess = function () {
-  console.log('ui deleteCookiesSuccess function')
+const deleteCookiesSuccess = function (data) {
   $('#edit-cookies').hide()
+  $('#delete-cookies').hide()
   formResets()
-  // remove that row from table
+  // deleteRow(data)
   clearText()
+  $('#info').append('Noted! Press refresh to see your updated cookie list.')
 }
 
 const error = function () {
-  console.log('ui.signedInError function')
+  console.log('ui.error function')
   clearText()
   formResets()
   $('#info').append('Error! Try again.')
@@ -87,18 +87,26 @@ const formResets = function () {
     document.getElementById('edit-cookies-form').reset()
     document.getElementById('change-password-form').reset()
     document.getElementById('add-cookie-form').reset()
+    document.getElementById('delete-cookies-form').reset()
   } else {
     document.getElementById('sign-in-form').reset()
     document.getElementById('sign-up-form').reset()
   }
 }
 
-const updateTable = function (data) {
-  const newRow = '<tr><td>' + data.cookie.cookieName + '</td><td>' + data.cookie.amount + '</td><td>' +
-  data.cookie.distributableUnits + '</td><td><button class="edit-button">Edit</button></td></tr>'
-  $('tbody').append(newRow)
-}
-
+// const addToTable = function (data) {
+//   const newRow = '<tr><td>' + data.cookie.cookieName + '</td><td>' + data.cookie.amount + '</td><td>' +
+//   data.cookie.distributableUnits + '</td><td><button class="edit-button">Edit</button></td></tr>'
+//   $('thead').append(newRow)
+// }
+//
+// const deleteRow = function (data) {
+//   console.log('delete row function')
+//   if (data.cookie.cookieName === '') {
+//     $(this).parents('tr').remove()
+//   }
+// }
+//
 const clearText = function () {
   document.getElementById('info').textContent = ''
 }

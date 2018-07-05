@@ -2,10 +2,8 @@
 
 const config = require('./config.js')
 const store = require('./store')
-// const ui = require('./ui.js')
 
 const signUp = function (data) {
-  console.log('api.signup function')
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-up',
@@ -14,8 +12,6 @@ const signUp = function (data) {
 }
 
 const signIn = function (data) {
-  console.log('api.signIn function')
-  console.log('data is ' + data)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/sign-in',
@@ -24,8 +20,6 @@ const signIn = function (data) {
 }
 
 const changePassword = function (data) {
-  console.log('api.changePassword function')
-  console.log('data is ' + data)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/change-password',
@@ -37,8 +31,6 @@ const changePassword = function (data) {
 }
 
 const signOut = function () {
-  console.log('api.signOut function')
-  console.log('store.user.token is ' + store.user.token)
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/sign-out',
@@ -49,7 +41,6 @@ const signOut = function () {
 }
 
 const addCookies = function (data) {
-  console.log('api.addCookies function')
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/cookies',
@@ -61,7 +52,6 @@ const addCookies = function (data) {
 }
 
 const getCookies = function () {
-  console.log('api.getCookies function')
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/cookies',
@@ -72,7 +62,6 @@ const getCookies = function () {
 }
 
 const editCookies = function (data) {
-  console.log('api.addCookies function')
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/cookies/' + data.cookie.id,
@@ -84,7 +73,6 @@ const editCookies = function (data) {
 }
 
 const deleteCookies = function (data) {
-  console.log('api deleteCookies function')
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/cookies/' + data.cookie.id,
