@@ -87,7 +87,7 @@ const formResets = function () {
     document.getElementById('edit-cookies-form').reset()
     document.getElementById('change-password-form').reset()
     document.getElementById('add-cookie-form').reset()
-    document.getElementById('delete-cookie-form').reset()
+    document.getElementById('delete-cookies-form').reset()
   } else {
     document.getElementById('sign-in-form').reset()
     document.getElementById('sign-up-form').reset()
