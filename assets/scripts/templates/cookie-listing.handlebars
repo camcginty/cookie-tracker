@@ -1,14 +1,6 @@
 
 {{#each cookies as |cookie|}}
-<!-- cookies after each has to match object in function in file that calls this file
-  in this case, it's in scripts/cookies/ui.js -->
-  <!-- {{log cookie}} -->
-<!-- console.logs each cookie -->
 
- <!-- Developers, why are we using data-id and not just id?
-    not a hardcoded id. produces individual id for each item.
-    not meant to be directly called by things like querySelector.
-    $('h1').on(data('id')) the 'id' refers to data-id (has to match whatever after data-)-->
       <tr>
         <td class="cookieName">{{cookie.cookieName}} </td>
         <td>{{cookie.amount}}</td>
