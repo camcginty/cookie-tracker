@@ -36,7 +36,6 @@ const signOutSuccess = function (signOutSuccess) {
 }
 
 const addCookiesSuccess = function (data) {
-  console.log('ui.addCookieSuccess function')
   formResets()
   clearText()
   $('#info').append('Noted! Press refresh to see your updated cookie list.')
@@ -70,13 +69,11 @@ const deleteCookiesSuccess = function (data) {
   $('#edit-cookies').hide()
   $('#delete-cookies').hide()
   formResets()
-  // deleteRow(data)
   clearText()
   $('#info').append('Noted! Press refresh to see your updated cookie list.')
 }
 
 const error = function () {
-  console.log('ui.error function')
   clearText()
   formResets()
   $('#info').append('Error! Try again.')
@@ -94,19 +91,6 @@ const formResets = function () {
   }
 }
 
-// const addToTable = function (data) {
-//   const newRow = '<tr><td>' + data.cookie.cookieName + '</td><td>' + data.cookie.amount + '</td><td>' +
-//   data.cookie.distributableUnits + '</td><td><button class="edit-button">Edit</button></td></tr>'
-//   $('thead').append(newRow)
-// }
-//
-// const deleteRow = function (data) {
-//   console.log('delete row function')
-//   if (data.cookie.cookieName === '') {
-//     $(this).parents('tr').remove()
-//   }
-// }
-//
 const clearText = function () {
   document.getElementById('info').textContent = ''
 }
