@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('./store')
-const showCookiesTemplate = require('./templates/cookie-listing.handlebars')
+const showCookiesTemplate = require('./templates/baker-cookies.handlebars')
 
 let signedIn = false
 
@@ -36,11 +36,9 @@ const signOutSuccess = function (signOutSuccess) {
 }
 
 const addCookiesSuccess = function (data) {
-  console.log('ui.addCookieSuccess function')
   formResets()
   clearText()
-  $('#info').append('Noted! Press refresh to see your updated cookie list.')
-  // addToTable(data)
+  $('#info').append('Noted!')
 }
 
 const getCookiesSuccess = (data) => {
@@ -48,8 +46,6 @@ const getCookiesSuccess = (data) => {
   formResets()
   clearText()
   store.cookie = data.cookies
-  $('#show').hide()
-  $('#refresh').show()
 }
 
 const cookieTable = function (data) {
@@ -63,20 +59,18 @@ const editCookiesSuccess = function (data) {
   clearText()
   $('#edit-cookies').hide()
   $('#delete-cookies').hide()
-  $('#info').append('Noted! Press refresh to see your updated cookie list.')
+  $('#info').append('Noted!')
 }
 
 const deleteCookiesSuccess = function (data) {
   $('#edit-cookies').hide()
   $('#delete-cookies').hide()
   formResets()
-  // deleteRow(data)
   clearText()
-  $('#info').append('Noted! Press refresh to see your updated cookie list.')
+  $('#info').append('Noted!')
 }
 
 const error = function () {
-  console.log('ui.error function')
   clearText()
   formResets()
   $('#info').append('Error! Try again.')
@@ -94,19 +88,6 @@ const formResets = function () {
   }
 }
 
-// const addToTable = function (data) {
-//   const newRow = '<tr><td>' + data.cookie.cookieName + '</td><td>' + data.cookie.amount + '</td><td>' +
-//   data.cookie.distributableUnits + '</td><td><button class="edit-button">Edit</button></td></tr>'
-//   $('thead').append(newRow)
-// }
-//
-// const deleteRow = function (data) {
-//   console.log('delete row function')
-//   if (data.cookie.cookieName === '') {
-//     $(this).parents('tr').remove()
-//   }
-// }
-//
 const clearText = function () {
   document.getElementById('info').textContent = ''
 }

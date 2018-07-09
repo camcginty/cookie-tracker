@@ -14,14 +14,11 @@ $(() => {
   $('.signed-in').hide()
   $('#edit-cookies').hide()
   $('#delete-cookies').hide()
-  $('#show').show()
-  $('#refresh').hide()
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#change-password-form').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#add-cookie-form').on('submit', events.onAddCookies)
-  $('#get-cookies').on('click', events.onGetCookies)
   $('body').on('click', '.edit-button', events.onEditButton)
   $('body').on('click', '.delete-button', events.onDeleteButton)
   $('body').on('submit', '#edit-cookies-form', events.onEditCookies)
@@ -29,9 +26,6 @@ $(() => {
 })
 
 // to-do:
-// - show cookies table automatically when user signs in
-// - update cookies table in real time (refresh after edit/delete)
-// - get rid of any need for show cookies button
 // - autopopulate edit form with more than just id number (store cookie?)
 // - add get cookies total (all cookies, always visible) .reduce?
 // - add cookie totals per user (always number next to user?)

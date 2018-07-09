@@ -10,11 +10,12 @@ const onAddCookies = function (event) {
   const data = getFormFields(event.target)
   authApi.addCookies(data)
     .then(authUi.addCookiesSuccess)
+    .then(onGetCookies)
     .catch(authUi.error)
 }
 
 const onGetCookies = function () {
-  event.preventDefault()
+  // event.preventDefault()
   authApi.getCookies()
     .then(authUi.getCookiesSuccess)
     .catch(authUi.error)
@@ -48,6 +49,7 @@ const onEditCookies = function (thisId) {
   const data = getFormFields(event.target)
   authApi.editCookies(data)
     .then(authUi.editCookiesSuccess)
+    .then(onGetCookies)
     .catch(authUi.error)
 }
 
@@ -67,6 +69,7 @@ const onDeleteCookies = function () {
   const data = getFormFields(event.target)
   authApi.deleteCookies(data)
     .then(authUi.deleteCookiesSuccess(data))
+    .then(onGetCookies)
     .catch(authUi.error)
 }
 

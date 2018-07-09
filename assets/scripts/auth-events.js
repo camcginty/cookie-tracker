@@ -2,6 +2,7 @@
 
 const authApi = require('./api.js')
 const authUi = require('./ui.js')
+const events = require('./events.js')
 const getFormFields = require('../../lib/get-form-fields')
 
 const onSignUp = function (event) {
@@ -17,6 +18,7 @@ const onSignIn = function (event) {
   const data = getFormFields(event.target)
   authApi.signIn(data)
     .then(authUi.signInSuccess)
+    .then(events.onGetCookies)
     .catch(authUi.error)
 }
 
