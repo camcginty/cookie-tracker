@@ -1,11 +1,12 @@
 
 {{#each cookies as |cookie|}}
-
       <tr>
+        {{#if cookie.editable}}
         <td class="cookieName">{{cookie.cookieName}} </td>
         <td>{{cookie.amount}}</td>
         <td>{{cookie.distributableUnits}} </td>
         <td><button type='submit' class="edit-button" id="{{cookie.id}}">Edit</button></td>
         <td><button type="click" class='delete-button' id='{{cookie.id}}'>Delete</button></td>
       </tr>
+      {{/if}}
       {{/each}}

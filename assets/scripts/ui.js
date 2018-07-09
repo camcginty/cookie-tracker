@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('./store')
-const showCookiesTemplate = require('./templates/cookie-listing.handlebars')
+const showCookiesTemplate = require('./templates/baker-cookies.handlebars')
 
 let signedIn = false
 
@@ -38,8 +38,7 @@ const signOutSuccess = function (signOutSuccess) {
 const addCookiesSuccess = function (data) {
   formResets()
   clearText()
-  $('#info').append('Noted! Press refresh to see your updated cookie list.')
-  // addToTable(data)
+  $('#info').append('Noted!')
 }
 
 const getCookiesSuccess = (data) => {
@@ -47,8 +46,6 @@ const getCookiesSuccess = (data) => {
   formResets()
   clearText()
   store.cookie = data.cookies
-  $('#show').hide()
-  $('#refresh').show()
 }
 
 const cookieTable = function (data) {
@@ -62,7 +59,7 @@ const editCookiesSuccess = function (data) {
   clearText()
   $('#edit-cookies').hide()
   $('#delete-cookies').hide()
-  $('#info').append('Noted! Press refresh to see your updated cookie list.')
+  $('#info').append('Noted!')
 }
 
 const deleteCookiesSuccess = function (data) {
@@ -70,7 +67,7 @@ const deleteCookiesSuccess = function (data) {
   $('#delete-cookies').hide()
   formResets()
   clearText()
-  $('#info').append('Noted! Press refresh to see your updated cookie list.')
+  $('#info').append('Noted!')
 }
 
 const error = function () {
